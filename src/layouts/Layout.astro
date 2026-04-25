@@ -4,12 +4,20 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  ogType?: "website" | "article";
 }
 
 const {
   title = "Flow Report — フリーランスエンジニア向けに最適化された作業報告書・請求書作成システム",
   description = "精算幅計算への対応、作業報告の一括入力、Excelテンプレートのカスタマイズ、メールテンプレート機能、スマホ対応。フリーランスエンジニア向けに最適化された作業報告書・請求書作成システムを、完全無料でご利用いただけます。",
+  image = "/og-image.png",
+  ogType = "website",
 } = Astro.props;
+
+const siteUrl = Astro.site ?? new URL("https://about.flowreport.app");
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const imageUrl = new URL(image, siteUrl).toString();
 ---
 
 <!doctype html>
@@ -21,13 +29,27 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href={canonicalUrl} />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+
+    <meta property="og:site_name" content="Flow Report" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/flow-report.png" />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Flow Report — フリーランスエンジニア向け作業報告書・請求書SaaS" />
+
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@flowreport" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <title>{title}</title>

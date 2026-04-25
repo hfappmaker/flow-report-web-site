@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7fbff"/>
+      <stop offset="1" stop-color="#eaf4ff"/>
+    </linearGradient>
+    <radialGradient id="orb1" cx="0.15" cy="0.2" r="0.5">
+      <stop offset="0" stop-color="#3b9cf8" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#3b9cf8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="0.85" cy="0.85" r="0.55">
+      <stop offset="0" stop-color="#5dd4be" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#5dd4be" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="text" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0a1428"/>
+      <stop offset="1" stop-color="#1f3a6b"/>
+    </linearGradient>
+    <linearGradient id="brandText" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3b9cf8"/>
+      <stop offset="1" stop-color="#5dd4be"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#orb1)"/>
+  <rect width="1200" height="630" fill="url(#orb2)"/>
+
+  <!-- ドットグリッド -->
+  <g opacity="0.35">
+    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#0a1428" fill-opacity="0.08"/>
+    </pattern>
+    <rect width="1200" height="630" fill="url(#dots)"/>
+  </g>
+
+  <!-- ロゴアイコン -->
+  <g transform="translate(96, 110)">
+    <rect x="0" y="0" width="92" height="92" rx="18" fill="#ffffff" stroke="#3b9cf8" stroke-width="4"/>
+    <g transform="translate(20, 24)" stroke="#5dd4be" stroke-width="6" stroke-linecap="round" fill="none">
+      <path d="M0 6 L52 6"/>
+      <path d="M0 24 L52 24"/>
+      <path d="M0 42 L36 42"/>
+    </g>
+  </g>
+
+  <text x="208" y="178" font-family="'Noto Sans CJK JP','Hiragino Sans','Noto Sans JP','Inter',sans-serif" font-size="56" font-weight="800" fill="url(#brandText)">Flow Report</text>
+
+  <!-- メインコピー -->
+  <text x="96" y="300" font-family="'Noto Sans CJK JP','Hiragino Sans','Noto Sans JP','Inter',sans-serif" font-size="68" font-weight="800" fill="url(#text)" letter-spacing="-1">月末の面倒を、</text>
+  <text x="96" y="392" font-family="'Noto Sans CJK JP','Hiragino Sans','Noto Sans JP','Inter',sans-serif" font-size="68" font-weight="800" fill="url(#text)" letter-spacing="-1">ボタンひとつに。</text>
+
+  <!-- サブコピー -->
+  <text x="96" y="460" font-family="'Noto Sans CJK JP','Hiragino Sans','Noto Sans JP','Inter',sans-serif" font-size="28" font-weight="500" fill="#46587a">フリーランスエンジニア向け 勤怠・作業報告書・請求書 SaaS</text>
+
+  <!-- 右下の会社名 -->
+  <text x="1104" y="580" font-family="'Noto Sans CJK JP','Hiragino Sans','Noto Sans JP','Inter',sans-serif" font-size="20" font-weight="500" fill="#7a8aa3" text-anchor="end">株式会社FlowTech</text>
+</svg>
