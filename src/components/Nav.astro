@@ -1,0 +1,49 @@
+---
+const links = [
+  { href: "#problem", label: "課題" },
+  { href: "#features", label: "機能" },
+  { href: "#how", label: "使い方" },
+  { href: "#pricing", label: "料金" },
+  { href: "#faq", label: "FAQ" },
+];
+
+const appUrl = "https://www.flowreport.app";
+const contactUrl = "https://forms.gle/no1QQimGb8kMqiwS7";
+---
+
+<header class="sticky top-0 z-50">
+  <div class="container-x mt-4">
+    <nav class="glass flex items-center justify-between rounded-full px-3 py-2 sm:px-5">
+      <a href="/" class="flex items-center gap-2 pl-1.5 font-semibold tracking-tight text-ink-900">
+        <span class="grid h-8 w-8 place-items-center rounded-lg border-2 border-brand-500 bg-white">
+          <svg viewBox="0 0 18 18" width="14" height="14" fill="none" stroke="#5dd4be" stroke-width="2.2" stroke-linecap="round">
+            <path d="M4 5h10M4 9h10M4 13h7"/>
+          </svg>
+        </span>
+        <span class="text-base">
+          <span class="text-brand-600">Flow</span><span class="ml-0.5 text-brand-600">Report</span>
+        </span>
+      </a>
+
+      <ul class="hidden items-center gap-7 text-sm text-ink-600 md:flex">
+        {
+          links.map((l) => (
+            <li>
+              <a class="transition hover:text-ink-900" href={l.href}>
+                {l.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="flex items-center gap-2">
+        <a href={contactUrl} target="_blank" rel="noopener" class="hidden text-sm text-ink-600 transition hover:text-ink-900 sm:inline">お問い合わせ</a>
+        <a href={appUrl} class="btn-primary" target="_blank" rel="noopener">
+          ログイン画面へ
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,76 @@
+---
+import workReport from "../../public/work-report.png";
+import { Image } from "astro:assets";
+
+const steps = [
+  {
+    no: "01",
+    title: "Googleアカウントでログイン",
+    body: "Flow Reportにアクセスし、Googleアカウントでログイン。クライアント・契約・精算方式・Excelテンプレート・メールテンプレートを最初に1度だけ登録します。",
+  },
+  {
+    no: "02",
+    title: "締め日に作業報告を一括入力",
+    body: "毎日打刻しなくても大丈夫。いつも同じ時間に出退勤しているなら、締め日に一括入力してから微修正するだけ。スマホからも操作できます。",
+  },
+  {
+    no: "03",
+    title: "作業報告書・請求書・メールまで生成",
+    body: "ワンクリックで作業報告書・請求書のExcelを生成。メールテンプレートはGmailへそのまま読み込めるので、クライアントへの送付まで一気に完了します。",
+  },
+];
+---
+
+<section id="how" class="relative py-24 sm:py-32">
+  <div class="container-x">
+    <div class="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+      <div>
+        <span class="eyebrow">How it works</span>
+        <h2 class="mt-5 text-4xl font-semibold tracking-tight text-ink-900 sm:text-5xl">
+          Googleアカウントさえあれば、<br />
+          <span class="gradient-text">今日から</span>使い始められる。
+        </h2>
+        <p class="mt-4 max-w-lg text-lg text-ink-600">
+          インストール不要、クレジットカードも不要。完全無料で、パソコンからもスマホからもすぐに使えます。
+        </p>
+
+        <ol class="mt-10 space-y-5">
+          {
+            steps.map((s, i) => (
+              <li class="relative flex gap-5">
+                <div class="flex flex-col items-center">
+                  <div class="grid h-12 w-12 place-items-center rounded-full border border-brand-200 bg-white font-mono text-sm font-semibold text-brand-600 shadow-sm">
+                    {s.no}
+                  </div>
+                  {i < steps.length - 1 && (
+                    <div class="mt-2 w-px flex-1 bg-gradient-to-b from-brand-200 to-transparent" style="min-height:48px" />
+                  )}
+                </div>
+                <div class="pb-2">
+                  <h3 class="text-lg font-semibold tracking-tight text-ink-900">{s.title}</h3>
+                  <p class="mt-1.5 text-sm leading-relaxed text-ink-600">{s.body}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+
+      <!-- Right: visual -->
+      <div class="relative">
+        <div class="relative mx-auto max-w-md">
+          <div class="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-brand-200/40 via-mint-200/30 to-transparent blur-2xl"></div>
+          <div class="relative overflow-hidden rounded-2xl border border-ink-200 bg-white shadow-xl">
+            <Image
+              src={workReport}
+              alt="Flow Report 作業報告書の生成画面"
+              widths={[480, 720, 960, 1280]}
+              sizes="(min-width: 1024px) 480px, 100vw"
+              class="block h-auto w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

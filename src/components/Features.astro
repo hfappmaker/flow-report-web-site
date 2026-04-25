@@ -1,0 +1,80 @@
+---
+const features = [
+  {
+    title: "精算幅計算への対応",
+    quote: "「精算幅、上下割、中間割、控除単価、超過単価、月単価」",
+    body: "Flow Reportは上記のワードに馴染みのあるフリーランスの方に最適化されています。契約内容を複製して次の契約にもすぐ引き継げます。",
+    icon: "M12 2v20M5 6l7-4 7 4M5 18l7 4 7-4",
+    accent: "from-sky-500 to-cyan-400",
+  },
+  {
+    title: "作業報告の一括入力",
+    quote: "「毎日打刻するのも忘れてしまう… だいたいいつも同じ時間に出勤、退勤してるから一括で入力したいなあ」",
+    body: "Flow Reportは作業報告書の一括入力をサポートしています。締め日に一括入力してから微修正するだけで完成します。",
+    icon: "M3 5h18M3 12h18M3 19h12",
+    accent: "from-brand-500 to-brand-400",
+  },
+  {
+    title: "カスタマイズに対応",
+    quote: null,
+    body: "あらかじめ名前付き範囲を設定したExcelテンプレートをアップロードし、名前付き範囲に対する値のマッピング方法を設定することで、様々なフォーマットで作業報告書・請求書を出力できます。",
+    icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 13h6M9 17h4",
+    accent: "from-mint-500 to-mint-400",
+  },
+  {
+    title: "メールテンプレート機能",
+    quote: "「毎回同じ形式でクライアントにメールを送信してるから、あらかじめテンプレートから簡単にメールを作成出来たらいいなあ」",
+    body: "件名・本文をあらかじめテンプレート化。Gmailへそのまま読み込めるので、繰り返しの送付作業が一気に軽くなります。",
+    icon: "M4 4h16v16H4zM4 4l8 8 8-8",
+    accent: "from-emerald-500 to-teal-400",
+  },
+  {
+    title: "スマホからも利用可能",
+    quote: null,
+    body: "パソコンからだけでなくスマホからも利用可能です。Excelテンプレート・メールテンプレートを予め用意しておくことで、作業報告書＆請求書の作成からクライアントへのメール送信まで、スマホだけで完結します。",
+    icon: "M7 2h10a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM11 18h2",
+    accent: "from-violet-500 to-fuchsia-400",
+  },
+];
+---
+
+<section id="features" class="relative py-24 sm:py-32">
+  <div class="container-x">
+    <div class="mx-auto max-w-2xl text-center">
+      <span class="eyebrow">Features</span>
+      <h2 class="mt-5 text-4xl font-semibold tracking-tight text-ink-900 sm:text-5xl">
+        フリーランスの<span class="gradient-text">月末作業</span>に、<br class="hidden sm:block" />
+        ちょうどいい機能だけ。
+      </h2>
+      <p class="mt-4 text-lg text-ink-600">
+        精算幅計算・一括入力・Excelテンプレート・メールテンプレート・スマホ対応。
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        features.map((f) => (
+          <article class="card group">
+            <div class={`inline-grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br ${f.accent} text-white shadow-md transition group-hover:scale-105`}>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d={f.icon} />
+              </svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold tracking-tight text-ink-900">{f.title}</h3>
+            {f.quote && (
+              <p class="mt-2 text-xs leading-relaxed text-ink-500">{f.quote}</p>
+            )}
+            <p class="mt-2 text-sm leading-relaxed text-ink-600">{f.body}</p>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-xs text-ink-500">
+      <span class="rounded-full border border-ink-200 bg-white/60 px-3 py-1">完全無料</span>
+      <span class="rounded-full border border-ink-200 bg-white/60 px-3 py-1">Googleアカウントでログイン</span>
+      <span class="rounded-full border border-ink-200 bg-white/60 px-3 py-1">Excelテンプレートに対応</span>
+      <span class="rounded-full border border-ink-200 bg-white/60 px-3 py-1">スマホ対応</span>
+    </div>
+  </div>
+</section>

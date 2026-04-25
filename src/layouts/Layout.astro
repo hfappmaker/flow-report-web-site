@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Flow Report — フリーランスエンジニア向けに最適化された作業報告書・請求書作成システム",
+  description = "精算幅計算への対応、作業報告の一括入力、Excelテンプレートのカスタマイズ、メールテンプレート機能、スマホ対応。フリーランスエンジニア向けに最適化された作業報告書・請求書作成システムを、完全無料でご利用いただけます。",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/flow-report.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="relative isolate">
+      <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div class="orb" style="width:520px;height:520px;background:#3b9cf8;top:-160px;left:-140px;"></div>
+        <div class="orb" style="width:460px;height:460px;background:#5dd4be;top:220px;right:-140px;animation-delay:-6s;"></div>
+        <div class="orb" style="width:380px;height:380px;background:#84c4ff;top:980px;left:20%;animation-delay:-11s;opacity:.3;"></div>
+        <div
+          class="absolute inset-0 opacity-[0.35]"
+          style="background-image: radial-gradient(circle at 1px 1px, rgba(10,20,40,0.07) 1px, transparent 0); background-size: 28px 28px; mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 80%);"
+        ></div>
+      </div>
+      <slot />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+---
+import dashboard from "../../public/dashboard.png";
+import { Image } from "astro:assets";
+---
+
+<section class="relative pt-12 pb-16 sm:pt-20 sm:pb-24">
+  <div class="container-x">
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="eyebrow rise">
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-mint-400 opacity-70"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-mint-500"></span>
+        </span>
+        完全無料 / Googleアカウントですぐ始められる
+      </span>
+
+      <h1 class="rise rise-delay-1 mt-6 text-[2rem] font-semibold leading-[1.18] tracking-tight text-ink-900 sm:text-5xl md:text-[3.4rem]">
+        フリーランスエンジニア向けに<br class="hidden sm:block" />
+        最適化された<br class="hidden sm:block" />
+        <span class="gradient-text">作業報告書・請求書</span>作成システム
+      </h1>
+
+      <p class="rise rise-delay-2 mx-auto mt-6 max-w-2xl text-left text-base leading-relaxed text-ink-600 sm:text-lg">
+        「毎月の作業報告書、請求書の作成を楽にしたいなあ…」<br />
+        フリーランスエンジニアの私はそう思ったものの、ネットで調べてみても企業向けのサービスばかりで、フリーランス向けのサービスはなかなか見当たりません。<br /><br />
+        「それならいっそのこと、自分で作ってしまおう」—— そのような想いから、フリーランス向けに最適化された作業報告書・請求書作成システム「Flow Report」を開発しました。
+      </p>
+
+      <div class="rise rise-delay-3 mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a href="https://www.flowreport.app" target="_blank" rel="noopener" class="btn-primary px-6 py-3 text-base">
+          ログイン画面へ
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#features" class="btn-ghost px-6 py-3 text-base">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+          機能を見る
+        </a>
+      </div>
+
+      <p class="rise rise-delay-3 mt-5 text-xs text-ink-500">
+        完全無料でご利用いただけます（※ご利用にはGoogleアカウントが必要になります）
+      </p>
+    </div>
+
+    <!-- Product preview -->
+    <div class="rise rise-delay-4 mt-16 sm:mt-20">
+      <div class="relative mx-auto max-w-5xl">
+        <div class="absolute -inset-x-10 -top-10 -bottom-10 -z-10 bg-gradient-to-b from-brand-200/50 via-mint-200/30 to-transparent blur-3xl"></div>
+        <div class="rounded-2xl border border-ink-200 bg-white p-2 shadow-2xl shadow-brand-500/10">
+          <div class="flex items-center gap-1.5 px-3 py-2">
+            <span class="h-2.5 w-2.5 rounded-full bg-rose-300"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-amber-300"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-emerald-300"></span>
+            <span class="ml-3 text-xs text-ink-400">flow-report.app / work-report / 2026-04</span>
+          </div>
+          <div class="overflow-hidden rounded-xl bg-ink-50">
+            <Image
+              src={dashboard}
+              alt="Flow Report ダッシュボード画面"
+              widths={[640, 960, 1280, 1600]}
+              sizes="(min-width: 1024px) 1024px, 100vw"
+              class="block h-auto w-full"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

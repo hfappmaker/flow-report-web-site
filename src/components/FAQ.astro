@@ -1,0 +1,62 @@
+---
+const faqs = [
+  {
+    q: "本当に無料で使えますか？",
+    a: "はい。Flow Reportは完全無料でご利用いただけます。トライアル期限や機能制限はありません。ご利用にはGoogleアカウントが必要になります。",
+  },
+  {
+    q: "対応している精算方式は？",
+    a: "上下割・中間割・控除単価・超過単価・月単価といった、フリーランスエンジニア向けの精算幅計算に最適化されています。契約内容を複製して次の契約にも引き継げます。",
+  },
+  {
+    q: "クライアント指定のExcelテンプレートを使えますか？",
+    a: "はい。あらかじめ名前付き範囲を設定したExcelテンプレートをアップロードし、名前付き範囲に対する値のマッピング方法を設定することで、様々なフォーマットで作業報告書・請求書を出力できます。",
+  },
+  {
+    q: "毎日勤怠を入力する必要がありますか？",
+    a: "いいえ、作業報告の一括入力に対応しています。いつも同じ時間に出退勤しているなら、締め日にまとめて入力してから微修正するだけで完成します。",
+  },
+  {
+    q: "スマホからも使えますか？",
+    a: "はい。パソコンからだけでなくスマホからも利用可能です。Excelテンプレート・メールテンプレートを予め用意しておくことで、作業報告書・請求書の作成からクライアントへのメール送信までスマホだけで完結します。",
+  },
+  {
+    q: "メール送信はどのように行いますか？",
+    a: "メールテンプレートをあらかじめ登録しておき、Gmailにそのまま読み込ませて送信する仕組みです。毎回同じ形式のクライアント宛メールを、テンプレートからすぐに作れます。",
+  },
+];
+---
+
+<section id="faq" class="relative py-24 sm:py-32">
+  <div class="container-x">
+    <div class="grid gap-12 lg:grid-cols-[1fr_1.2fr]">
+      <div>
+        <span class="eyebrow">FAQ</span>
+        <h2 class="mt-5 text-4xl font-semibold tracking-tight text-ink-900 sm:text-5xl">よくある質問</h2>
+        <p class="mt-4 max-w-sm text-ink-600">
+          上にない質問は
+          <a href="https://forms.gle/no1QQimGb8kMqiwS7" target="_blank" rel="noopener" class="text-brand-600 underline decoration-brand-300 underline-offset-4 transition hover:decoration-brand-600">お問い合わせフォーム</a>
+          までどうぞ。
+        </p>
+      </div>
+
+      <ul class="space-y-3">
+        {
+          faqs.map((f, i) => (
+            <li>
+              <details class="group rounded-2xl border border-ink-200 bg-white px-5 py-4 transition hover:border-brand-200 open:border-brand-300 open:shadow-md" open={i === 0}>
+                <summary class="flex cursor-pointer items-center justify-between gap-4 text-left text-base font-medium text-ink-900 [&::-webkit-details-marker]:hidden">
+                  <span>{f.q}</span>
+                  <span class="grid h-7 w-7 flex-none place-items-center rounded-full border border-ink-200 text-ink-500 transition group-open:rotate-45 group-open:border-brand-300 group-open:bg-brand-50 group-open:text-brand-600">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                  </span>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-ink-600">{f.a}</p>
+              </details>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

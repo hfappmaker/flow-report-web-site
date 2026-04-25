@@ -1,0 +1,34 @@
+---
+import LegalLayout from "../layouts/LegalLayout.astro";
+
+const rows = [
+  { label: "法人名", value: "株式会社ＦｌｏｗＴｅｃｈ" },
+  { label: "住所", value: "〒150-0002\n東京都渋谷区渋谷2丁目19-15 宮益坂ビルディング609" },
+  { label: "電話番号", value: "080-1507-6715" },
+  { label: "メールアドレス", value: "info@flowreport.app" },
+  { label: "運営責任者", value: "古垣 博光" },
+  { label: "追加手数料", value: "なし（但し、インターネット接続料金その他の電気通信回線の通信に関する費用及び通信機器はユーザーにて負担して頂きます）" },
+  { label: "交換および返品に関するポリシー", value: "なし" },
+  { label: "サービス提供開始の時期", value: "ログイン完了後、直ちにご利用いただけます。" },
+  { label: "利用可能な決済手段", value: "なし" },
+  { label: "決済期間", value: "なし" },
+  { label: "価格", value: "無料" },
+];
+---
+
+<LegalLayout
+  title="特定商取引に基づく表記 — Flow Report"
+  description="Flow Report の特定商取引法に基づく表記。"
+  heading="特定商取引に基づく表記"
+>
+  <dl>
+    {
+      rows.map((r) => (
+        <>
+          <dt>{r.label}</dt>
+          <dd style="white-space: pre-line;">{r.value}</dd>
+        </>
+      ))
+    }
+  </dl>
+</LegalLayout>

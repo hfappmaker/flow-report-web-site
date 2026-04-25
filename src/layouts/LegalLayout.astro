@@ -1,0 +1,125 @@
+---
+import Layout from "./Layout.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  heading: string;
+}
+
+const { title, description, heading } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <header class="sticky top-0 z-50">
+    <div class="container-x mt-4">
+      <nav class="glass flex items-center justify-between rounded-full px-3 py-2 sm:px-5">
+        <a href="/" class="flex items-center gap-2 pl-1.5 font-semibold tracking-tight text-ink-900">
+          <span class="grid h-8 w-8 place-items-center rounded-lg border-2 border-brand-500 bg-white">
+            <svg viewBox="0 0 18 18" width="14" height="14" fill="none" stroke="#5dd4be" stroke-width="2.2" stroke-linecap="round">
+              <path d="M4 5h10M4 9h10M4 13h7"/>
+            </svg>
+          </span>
+          <span class="text-base">
+            <span class="text-brand-600">Flow</span><span class="ml-0.5 text-brand-600">Report</span>
+          </span>
+        </a>
+        <a href="/" class="text-sm text-ink-600 transition hover:text-ink-900">
+          ← トップに戻る
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="relative py-16 sm:py-24">
+    <div class="container-x">
+      <div class="mx-auto max-w-3xl">
+        <h1 class="text-3xl font-semibold tracking-tight text-ink-900 sm:text-4xl">{heading}</h1>
+        <div class="hairline mt-8"></div>
+        <article class="legal-prose mt-10">
+          <slot />
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style is:global>
+  .legal-prose {
+    color: #2a3a55;
+    font-size: 0.95rem;
+    line-height: 1.85;
+  }
+  .legal-prose p {
+    margin: 0 0 1.1rem;
+  }
+  .legal-prose h2 {
+    margin: 2.4rem 0 0.9rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #0a1428;
+    letter-spacing: -0.01em;
+  }
+  .legal-prose h3 {
+    margin: 1.6rem 0 0.6rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0a1428;
+  }
+  .legal-prose ul {
+    margin: 0 0 1.1rem;
+    padding-left: 1.25rem;
+    list-style: disc;
+  }
+  .legal-prose ul li {
+    margin: 0.3rem 0;
+  }
+  .legal-prose ul ul {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    list-style: circle;
+  }
+  .legal-prose .lead {
+    font-size: 1rem;
+    color: #2a3a55;
+    margin-bottom: 2rem;
+  }
+  .legal-prose .meta {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e6ebf3;
+    color: #5b6b85;
+    font-size: 0.85rem;
+  }
+  .legal-prose .meta-label {
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-weight: 600;
+    color: #0a1428;
+  }
+  .legal-prose dl {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: 0.6rem 1.5rem;
+    margin: 0;
+  }
+  .legal-prose dl dt {
+    font-weight: 600;
+    color: #0a1428;
+  }
+  .legal-prose dl dd {
+    margin: 0;
+  }
+  @media (max-width: 640px) {
+    .legal-prose dl {
+      grid-template-columns: 1fr;
+      gap: 0.2rem 0;
+    }
+    .legal-prose dl dd {
+      margin-bottom: 0.8rem;
+    }
+  }
+</style>

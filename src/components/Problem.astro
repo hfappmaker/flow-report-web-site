@@ -1,0 +1,54 @@
+---
+const pains = [
+  {
+    title: "探しても企業向けばかり",
+    body: "ネットで勤怠・請求ツールを調べても、見つかるのは企業向けのサービスばかり。フリーランスの働き方にフィットするものがなかなか見当たらない。",
+  },
+  {
+    title: "精算幅計算がややこしい",
+    body: "上下割・中間割・控除単価・超過単価・月単価。契約ごとにルールが違い、毎月ごとに電卓を叩き直している。",
+  },
+  {
+    title: "毎日の打刻、忘れがち",
+    body: "だいたい同じ時間に出退勤しているのに、1日ごとの打刻を求められる。締め日にまとめて入力できたらいいのに。",
+  },
+  {
+    title: "メール作成が毎回同じ作業",
+    body: "クライアントに送る送付メールは毎回同じ形式。テンプレートから簡単に作れたら、月末はもっと軽くなる。",
+  },
+];
+---
+
+<section id="problem" class="relative py-20 sm:py-28">
+  <div class="container-x">
+    <div class="mx-auto max-w-2xl text-center">
+      <span class="eyebrow">フリーランスの月末、こんなことありませんか？</span>
+      <h2 class="mt-5 text-4xl font-semibold tracking-tight text-ink-900 sm:text-5xl">
+        企業向けツールは、<br class="hidden sm:block" />
+        <span class="gradient-text">フリーランス</span>には合わない。
+      </h2>
+      <p class="mt-4 text-lg text-ink-600">
+        勤怠・作業報告書・請求書・送付メール。フリーランスの実務に沿ったものが、意外と見つからない。
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-4 sm:grid-cols-2">
+      {
+        pains.map((p) => (
+          <article class="card flex gap-4">
+            <div class="grid h-10 w-10 flex-none place-items-center rounded-xl bg-rose-50 text-rose-500">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M9 9l6 6M15 9l-6 6" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-base font-semibold tracking-tight text-ink-900">{p.title}</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-ink-600">{p.body}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

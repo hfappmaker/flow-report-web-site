@@ -1,0 +1,79 @@
+---
+const columns = [
+  {
+    title: "プロダクト",
+    links: [
+      { label: "ログイン画面へ", href: "https://www.flowreport.app", external: true },
+      { label: "機能", href: "#features" },
+      { label: "使い方", href: "#how" },
+      { label: "料金", href: "#pricing" },
+      { label: "FAQ", href: "#faq" },
+    ],
+  },
+  {
+    title: "サポート",
+    links: [
+      { label: "お問い合わせ", href: "https://forms.gle/no1QQimGb8kMqiwS7", external: true },
+      { label: "X (旧Twitter)", href: "https://x.com/flowreport", external: true },
+    ],
+  },
+  {
+    title: "法務",
+    links: [
+      { label: "利用規約", href: "/terms-of-service" },
+      { label: "プライバシーポリシー", href: "/privacy-policy" },
+      { label: "特定商取引に基づく表記", href: "/act-on-specified-commercial-transactions" },
+    ],
+  },
+];
+---
+
+<footer class="relative border-t border-ink-200 bg-white/40 py-14 backdrop-blur">
+  <div class="container-x">
+    <div class="grid gap-10 md:grid-cols-[1.4fr_repeat(3,1fr)]">
+      <div>
+        <div class="flex items-center gap-2 text-lg font-semibold tracking-tight text-ink-900">
+          <span class="grid h-8 w-8 place-items-center rounded-lg border-2 border-brand-500 bg-white">
+            <svg viewBox="0 0 18 18" width="14" height="14" fill="none" stroke="#5dd4be" stroke-width="2.2" stroke-linecap="round">
+              <path d="M4 5h10M4 9h10M4 13h7"/>
+            </svg>
+          </span>
+          <span class="text-brand-600">FlowReport</span>
+        </div>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-ink-600">
+          フリーランスエンジニア向けに最適化された作業報告書・請求書作成システム。完全無料でご利用いただけます。
+        </p>
+        <p class="mt-5 text-xs text-ink-500">運営: 株式会社FlowTech</p>
+      </div>
+      {
+        columns.map((c) => (
+          <div>
+            <div class="text-sm font-semibold text-ink-900">{c.title}</div>
+            <ul class="mt-4 space-y-2.5 text-sm text-ink-600">
+              {c.links.map((l) => (
+                <li>
+                  {l.external ? (
+                    <a href={l.href} target="_blank" rel="noopener" class="transition hover:text-ink-900">{l.label}</a>
+                  ) : (
+                    <a href={l.href} class="transition hover:text-ink-900">{l.label}</a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="hairline my-10"></div>
+
+    <div class="flex flex-col items-start justify-between gap-4 text-xs text-ink-500 sm:flex-row sm:items-center">
+      <div>© {new Date().getFullYear()} 株式会社FlowTech. All rights reserved.</div>
+      <div class="flex flex-wrap gap-5">
+        <a href="/privacy-policy" class="hover:text-ink-800">プライバシーポリシー</a>
+        <a href="/terms-of-service" class="hover:text-ink-800">利用規約</a>
+        <a href="/act-on-specified-commercial-transactions" class="hover:text-ink-800">特定商取引に基づく表記</a>
+      </div>
+    </div>
+  </div>
+</footer>
