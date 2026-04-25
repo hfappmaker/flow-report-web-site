@@ -24,5 +24,8 @@ pnpm-debug.log*
 # astro
 .astro/
 
+# vercel
+.vercel/
+
 # claude code local settings
 .claude/settings.local.json
