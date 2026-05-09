@@ -1,10 +1,10 @@
 # Flow Report — 紹介LP
 
-**https://www.flowreport.app** の紹介ランディングページ（マーケティングサイト）です。
+**https://flowreport.flowtech.co.jp** の紹介ランディングページ（マーケティングサイト）です。
 
-[FlowReport](https://www.flowreport.app)（株式会社FlowTech）は、**フリーランスエンジニア向けの勤怠・作業報告書・請求書 SaaS** です。本リポジトリはそのプロダクト紹介用の静的サイトで、プロダクト本体とは別リポジトリ・別ホストで運用しています。
+[FlowReport](https://flowreport.flowtech.co.jp)（株式会社FlowTech）は、**フリーランスエンジニア向けの勤怠・作業報告書・請求書 SaaS** です。本リポジトリはそのプロダクト紹介用の静的サイトで、プロダクト本体とは別リポジトリ・別ホストで運用しています。
 
-- 🌐 **本サービス:** https://www.flowreport.app
+- 🌐 **本サービス:** https://flowreport.flowtech.co.jp
 - 🏢 **運営:** 株式会社FlowTech
 
 ## 紹介している主な機能
