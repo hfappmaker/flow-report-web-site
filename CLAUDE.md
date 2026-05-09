@@ -14,7 +14,7 @@ Webアプリ **FlowReport（株式会社FlowTech）** の**紹介LP**。
 - 請求書ワンクリック発行
 - メールテンプレート + mailto / 添付送信
 - freee API 連携、AI補助 (OpenAI / Ollama)
-- Google OAuth、2要素認証、監査ログ
+- メール/パスワード認証、2要素認証、監査ログ
 - Stripe サブスク（14日間トライアル）
 
 ## 技術スタック（このLP）
