@@ -1,0 +1,25 @@
+---
+import NewsLayout from "../../layouts/NewsLayout.astro";
+import NewsCard from "../../components/NewsCard.astro";
+import { getNewsList } from "../../lib/microcms";
+
+const { contents } = await getNewsList({ limit: 50, orders: "-publishedAt" });
+---
+
+<NewsLayout
+  title="お知らせ — Flow Report"
+  description="Flow Report のアップデート情報、障害情報、各種お知らせの一覧。"
+  heading="お知らせ"
+>
+  {contents.length === 0 ? (
+    <p class="text-sm text-ink-500">現在お知らせはありません。</p>
+  ) : (
+    <ul class="grid gap-5 sm:grid-cols-2">
+      {contents.map((news) => (
+        <li>
+          <NewsCard news={news} />
+        </li>
+      ))}
+    </ul>
+  )}
+</NewsLayout>

@@ -1,0 +1,145 @@
+---
+import Layout from "./Layout.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  heading: string;
+  eyebrow?: string;
+  ogType?: "website" | "article";
+}
+
+const { title, description, heading, eyebrow = "News", ogType = "website" } = Astro.props;
+---
+
+<Layout title={title} description={description} ogType={ogType}>
+  <header class="sticky top-0 z-50">
+    <div class="container-x mt-4">
+      <nav class="glass flex items-center justify-between rounded-full px-3 py-2 sm:px-5">
+        <a href="/" class="flex items-center gap-2 pl-1.5 font-semibold tracking-tight text-ink-900">
+          <span class="grid h-8 w-8 place-items-center rounded-lg border-2 border-brand-500 bg-white">
+            <svg viewBox="0 0 18 18" width="14" height="14" fill="none" stroke="#5dd4be" stroke-width="2.2" stroke-linecap="round">
+              <path d="M4 5h10M4 9h10M4 13h7"/>
+            </svg>
+          </span>
+          <span class="text-base">
+            <span class="text-brand-600">Flow</span><span class="ml-0.5 text-brand-600">Report</span>
+          </span>
+        </a>
+        <a href="/" class="text-sm text-ink-600 transition hover:text-ink-900">
+          ← トップに戻る
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="relative py-16 sm:py-24">
+    <div class="container-x">
+      <div class="mx-auto max-w-3xl">
+        <span class="eyebrow">{eyebrow}</span>
+        <h1 class="mt-5 text-3xl font-semibold tracking-tight text-ink-900 sm:text-4xl">{heading}</h1>
+        <div class="hairline mt-8"></div>
+        <div class="mt-10">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style is:global>
+  .news-prose {
+    color: #2a3a55;
+    font-size: 0.97rem;
+    line-height: 1.85;
+  }
+  .news-prose p {
+    margin: 0 0 1.1rem;
+  }
+  .news-prose h2 {
+    margin: 2.2rem 0 0.9rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0a1428;
+    letter-spacing: -0.01em;
+  }
+  .news-prose h3 {
+    margin: 1.6rem 0 0.6rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0a1428;
+  }
+  .news-prose ul,
+  .news-prose ol {
+    margin: 0 0 1.1rem;
+    padding-left: 1.25rem;
+  }
+  .news-prose ul { list-style: disc; }
+  .news-prose ol { list-style: decimal; }
+  .news-prose li { margin: 0.3rem 0; }
+  .news-prose a {
+    color: #1a7fe0;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .news-prose a:hover { color: #0a5fb8; }
+  .news-prose blockquote {
+    margin: 1.1rem 0;
+    padding: 0.6rem 1rem;
+    border-left: 3px solid #b9ddff;
+    background: #f4f9ff;
+    color: #2a3a55;
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .news-prose code {
+    background: #eef2f8;
+    padding: 0.1rem 0.35rem;
+    border-radius: 0.3rem;
+    font-size: 0.9em;
+  }
+  .news-prose pre {
+    background: #0a1428;
+    color: #eaf1fb;
+    padding: 1rem 1.1rem;
+    border-radius: 0.6rem;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  .news-prose pre code {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+  }
+  .news-prose img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+  }
+  .news-prose hr {
+    border: 0;
+    border-top: 1px solid #e6ebf3;
+    margin: 2rem 0;
+  }
+  .news-prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  .news-prose th,
+  .news-prose td {
+    border: 1px solid #e6ebf3;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .news-prose th {
+    background: #f4f7fc;
+    font-weight: 600;
+    color: #0a1428;
+  }
+</style>

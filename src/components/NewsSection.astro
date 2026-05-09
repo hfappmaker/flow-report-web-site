@@ -1,0 +1,32 @@
+---
+import { getNewsList } from "../lib/microcms";
+import NewsCard from "./NewsCard.astro";
+
+const { contents } = await getNewsList({ limit: 3, orders: "-publishedAt" });
+---
+
+{contents.length > 0 && (
+  <section id="news" class="relative py-24 sm:py-32">
+    <div class="container-x">
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <div>
+          <span class="eyebrow">News</span>
+          <h2 class="mt-5 text-4xl font-semibold tracking-tight text-ink-900 sm:text-5xl">
+            お知らせ
+          </h2>
+          <p class="mt-4 max-w-md text-ink-600">
+            アップデート情報や障害情報など、最新のお知らせをお届けします。
+          </p>
+        </div>
+        <a href="/news" class="btn-ghost">
+          すべて見る
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {contents.map((news) => <NewsCard news={news} />)}
+      </div>
+    </div>
+  </section>
+)}
