@@ -44,7 +44,7 @@
     </g>
   </g>
 
-  <text x="208" y="178" font-family="'Noto Sans CJK JP','Hiragino Sans','Noto Sans JP','Inter',sans-serif" font-size="56" font-weight="800" fill="url(#brandText)">Flow Report</text>
+  <text x="208" y="178" font-family="'Noto Sans CJK JP','Hiragino Sans','Noto Sans JP','Inter',sans-serif" font-size="56" font-weight="800" fill="url(#brandText)">FlowReport</text>
 
   <!-- メインコピー -->
   <text x="96" y="300" font-family="'Noto Sans CJK JP','Hiragino Sans','Noto Sans JP','Inter',sans-serif" font-size="68" font-weight="800" fill="url(#text)" letter-spacing="-1">月末の面倒を、</text>

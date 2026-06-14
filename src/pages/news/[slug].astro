@@ -24,11 +24,11 @@ const { news } = Astro.props;
 const dateIso = news.publishedAt ?? news.createdAt;
 const dateLabel = formatPublishedAt(dateIso);
 const category = getCategoryLabel(news.category);
-const description = stripHtml(news.content, 120) || `Flow Report からのお知らせ: ${news.title}`;
+const description = stripHtml(news.content, 120) || `FlowReport からのお知らせ: ${news.title}`;
 ---
 
 <NewsLayout
-  title={`${news.title} — Flow Report お知らせ`}
+  title={`${news.title} — FlowReport お知らせ`}
   description={description}
   heading={news.title}
   eyebrow={category ?? "News"}

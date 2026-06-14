@@ -1,4 +1,4 @@
-# Flow Report — 紹介LP
+# FlowReport — 紹介LP
 
 **https://flowreport.flowtech.co.jp** の紹介ランディングページ（マーケティングサイト）です。
 
