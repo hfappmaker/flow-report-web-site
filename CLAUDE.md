@@ -18,8 +18,8 @@ Webアプリ **FlowReport（株式会社FlowTech）** の**紹介LP**。
 - Stripe サブスク（14日間トライアル）
 
 ## 技術スタック（このLP）
-- **Astro 4.16** + `@astrojs/tailwind` 5.1（Node 20.10 のため4系ピン）
-- **Tailwind CSS 3.4**
+- **Astro 7.3** + `@astrojs/vercel` 11（Node 22.12+ 必須。7.4 は Node 22.23.4+ 必須なので 7.3 系に留めている）
+- **Tailwind CSS 3.4**（`@astrojs/tailwind` は Astro 6+ 非対応のため `postcss.config.mjs` 経由で読み込み）
 - **TypeScript** strict
 - 静的HTML出力、JSはほぼゼロ。LPに最適
 
@@ -76,8 +76,8 @@ npm run check     # 型チェック (@astrojs/check)
 ```
 
 ## 既知の環境制約
-- ローカル Node は **20.10.0**。Astro 5+ / Tailwind 4 / Vite 7 は Node 22 必須で動かない（`util.styleText` 不在）
-- 解消法: Node 22 を入れた後 `nvm use 22` → `npx @astrojs/upgrade` → `global.css` を `@import "tailwindcss"` + `@theme` 形式へ移行、`astro.config.mjs` を `@tailwindcss/vite` 構成へ切替
+- Node **22.12 以上**が必要（Astro 7 の要件）。Node 20 では動かない
+- Tailwind 4 へ移行する場合は `global.css` を `@import "tailwindcss"` + `@theme` 形式へ、`postcss.config.mjs` を `@tailwindcss/vite` 構成へ切替
 
 ## 今後の候補（未実装）
 - お問い合わせフォーム実装（Resend or Formspree）
